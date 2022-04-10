@@ -1,5 +1,5 @@
 
-# PROYECTO 1: Landing de Hospital de Videojuegos
+# PROYECTO 2: CRUD de Hospital de Videojuegos
 
 ## Introducción
 
