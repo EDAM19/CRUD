@@ -36,8 +36,8 @@ btnAgregar.addEventListener('click', () => {
     }
     arr.push(cita)
     inputFecha.value = ''
-    inputConsola = ''
-    inputFalla = ''
+    inputConsola.value = ''
+    inputFalla.value = ''
     localStorage.setItem('citas', JSON.stringify(arr))
     renderElemento()
 })
