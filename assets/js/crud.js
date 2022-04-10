@@ -42,6 +42,23 @@ btnAgregar.addEventListener('click', () => {
     renderElemento()
 })
 
+btnEditar.addEventListener('click', () => {
+    let cita = {
+        fecha: inputFecha.value,
+        consola: inputConsola.value,
+        falla: inputFalla.value
+    }
+    arr.splice(pos, 1)
+    arr.insert(pos, cita)
+    inputFecha.value = ''
+    inputConsola.value = ''
+    inputFalla.value = ''
+    localStorage.setItem('citas', JSON.stringify(arr))
+    renderElemento()
+    btnAgregar.style.display = 'initial'
+    btnEditar.style.display = 'none'
+})
+
 function renderElemento() {
     const lista = document.getElementById('lista-citas')
     lista.innerHTML = ''
@@ -78,6 +95,18 @@ function getItems() {
         arr = JSON.parse(citas)
         renderElemento()
     }
+}
+
+function editar(i) {
+    let cita = arr[i];
+    console.log(cita)
+    inputFecha.value = cita.fecha;
+    inputConsola.value = cita.consola;
+    inputFalla.value = cita.falla;
+    pos = i;
+    btnAgregar.style.display = 'none'
+    btnEditar.style.display = 'initial'
+
 }
 
 getItems()
